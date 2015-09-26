@@ -15,8 +15,8 @@ In terms of units, the acceleration signals from the smartphone accelerometer ar
 
 The set of variables that were estimated from the above signals are:
 
-.mean(): Mean value
-.std(): Standard deviation
+-mean(): Mean value
+-std(): Standard deviation
 .mad(): Median absolute deviation 
 .max(): Largest value in array
 .min(): Smallest value in array
