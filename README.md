@@ -129,4 +129,4 @@ colnames(mergeData3)[1:2]<- c("Subject", "Activity") #Put back correct colnames 
 colnames(mergeData3)<-gsub("\\()","-",colnames(mergeData3))
 colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
 
-> write.table(mergeData3, row.name=FALSE) # to print out the new tidy data set
+> write.table(mergeData3, "tidyData.txt", sep=",", row.name=FALSE) # to print out the new tidy data set to a txt file
