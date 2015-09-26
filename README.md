@@ -128,6 +128,5 @@ In the final data set, it was noted that there were six columns where part of th
 colnames(mergeData3)[1:2]<- c("Subject", "Activity") #Put back correct colnames for Subject and Activity
 colnames(mergeData3)<-gsub("\\()","-",colnames(mergeData3))
 colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
-# # The end - Need to change the Activity and column names accordingly # #
 
-> write.table(mergeData3, row.name=FALSE)
+> write.table(mergeData3, row.name=FALSE) # to print out the new tidy data set
