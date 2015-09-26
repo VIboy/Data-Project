@@ -40,3 +40,28 @@ The complete dataset that was downloaded consists of 2 folders ('train' and 'tes
 The next step was to merge the training and test sets into one data set. This created a merged data set of 10299 observations and 563 columns. After merging the data sets, the next step was to extract "only the measurements on the mean and standard deviation for each measurement". After doing this, there were 81 columns if we include the 2 columns of subject and activity. Therefore, there were a total of 79 variables with the mean and standard deviation. However, on examining these 79 varriables, I noticed that there were 13 variables of 'meanFreq' which is not part of the mean and standard deviation values required for this project. These 13 variables were removed giving a net total of 66 variables plus the two id columns of 'Subject' and 'Activity' - a total of 68 columns.
 
 We now have a clean and tidy set. In order to enhance the description of the Activty column, the descriptive names of the activities were put in to replace the related Activity code. Finally, the merged data set was transformed into a data set grouped by Subject and Activity, and the average of each of the measurement variables were computed. This resulted in an independent tidy data set with the average of each variable for each activity and each subject. The column names for the average of the variables were also modified to give more accurate and descriptive names to these newly derived variables. The column names were also cleaned up because there were 6 columns that had "BodyBody" as part of them. These were replaced by just "Body" for eg., from "ave_fBodyBodyAccJerkMagmean" to "ave_fBodyAccJerkMagmean". The "-" and "()" symbols were also removed. as these were seen to be redundant.
+
+Therefore, the final tidy data set consists of the average mean and standard deviation of the features derived from the following signals pattern:
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+(from 'features_info.txt' of the Course Project file)
+
+And the features are normalized and bounded within the range [-1,1].
+
