@@ -7,7 +7,7 @@ output: word_document
 
 ## CodeBook
 
-This codebook describes the variables, the data, and the work performed to clean up the raw data and turn it into a tidy dataset.
+This codebook describes the variables, the data, and the work performed to clean up the raw data and turn it into a tidy dataset. Since the information about the variables used on the feature vector are given in the 'features_info.txt' file, a lot of the information presented here are derived from that file of the Course Project.
 
 The raw data that was downloaded consists of a 561-feature vector with time and frequency domain variables. These were derived from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and t-Gyro-XYZ, and the acceleration signal that was separated into body and gravity acceleration signals: tBodyAcc-XYZ and tGravityAcc-XYZ. The body linear acceleration and angular velocity were then derived in time to obtain the Jerk signals: tBodyAccJerk-SYZ and tBodyGyroJerk-XYZ. Also computed were the following signals: tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag and tBodyGyroJerkMag. The time domain signals (with 't' prefix) were captured at a constant rate of 50 Hz and the frequency domain signals (with prefix 'f') were produced after a Fast Fourier Transform (FFT) was applied to some of the above signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag and fBodyGyroJerkMag signals.
 
