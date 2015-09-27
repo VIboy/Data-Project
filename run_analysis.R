@@ -1,5 +1,6 @@
 setwd("~/Data Cleaning")
 library(plyr)
+library(dplyr)
 if(!file.exists("data")) {
   dir.create("data")
 } #Creates a subdirectory called "data" in your working directory
@@ -7,7 +8,6 @@ if(!file.exists("data")) {
 fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile = "./data/project1.zip")
 
-library(dplyr)
 rawTrain<-read.table("./train/X_train.txt") #raw training set
 dim(rawTrain) #7352  by 561
 
@@ -62,15 +62,6 @@ mergeData<-rbind(trainSet2,testSet1) #Merged data set of 10299 rows and 563 colu
 dim(mergeData)
 mergeData[10295:10299,1:6] #tail end of merged dataset
 
-#Sorting out the mean and std in features. Total of 46+33=79 variables with mean and std
-# # This code not needed.
-featuresMean <- features[grepl("mean",features$V2),]
-dim(featuresMean) #46 2
-head(featuresMean)
-featuresStd <- features[grepl("std",features$V2),]
-dim(featuresStd) #33 2
-head(featuresStd)
-
 # Subset by selecting only columns with 'mean' or 'std' in the column names
 mergeData1<-mergeData[,c("Subject","Activity",colnames(mergeData)[grep("mean|std", colnames(mergeData))])]
 dim(mergeData1) #10299 by 81
@@ -97,7 +88,6 @@ mergeData2[1:10,1:10]
 dim(mergeData2)
    
 #Group by Subject & activity and caculate mean of each column
-library(dplyr) # To use %>% function
 mergeData3<-group_by(mergeData2, Subject, Activity) %>% summarise_each(c("mean"))
 dim(mergeData3)
 mergeData3[1:5,1:5]
@@ -110,7 +100,7 @@ colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace coln
 mergeData3[1:5,63:68] # Look at  the column names
 write.table(mergeData3, "tidyData.txt", sep=",", row.names=FALSE) # Write out the tidy data set to a tidyData.txt file
 
-colnames(mergeData3)<-sub("ave") # May not be needed
+
 
 
 
