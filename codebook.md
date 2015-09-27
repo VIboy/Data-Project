@@ -10,8 +10,8 @@ In terms of units, the acceleration signals from the smartphone accelerometer ar
 
 The set of variables that were estimated from the above signals are:
 
-* mean(): Mean value
-* std(): Standard deviation
+* mean(): Mean value  - include in the subset
+* std(): Standard deviation  - include for the subset
 * mad(): Median absolute deviation 
 * max(): Largest value in array
 * min(): Smallest value in array
@@ -28,7 +28,7 @@ The set of variables that were estimated from the above signals are:
 * bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 * angle(): Angle between two vectors.
 
-In this project, we are only interested in the mean and standard deviation variables. Please note that there is a meanFreq() component that will come up when we do a selection of the mean variable, and should be removed.
+In this project, we are only interested in the mean and standard deviation variables. Please note that there is a meanFreq() variable in the above list that will remain when we do a selection of the mean (and std) variable, and has to be removed.
 
 The complete dataset that was downloaded consists of 2 folders ('train' and 'test' folders) which contain all the raw data, and 4 text files (README.txt, 'features_info.txt', 'features.txt' and 'activity_labels.txt'). The raw data consists of two sets of data: the training data(70%) and test data(30%). The training data has 7352 observations of 561 variables and the test set has 2947 observations of the same number(561) of variables. The 2 columns for the subject id(30) and activity labels(6) were also added to both the training and test sets giving a total of 563 columns to represent each variable in each of the raw data sets. The more descriptive names for the 563 columns were then added to make it easier for future study and analysis. So the first column is the Subject id ranging from 1-30 and the second column the Activity code, ranging from 1-6 for the activities of walking, walking upstairs, walking downstairs, sitting, standing and laying. The Activity codes related directly to the activities described above were not were replaced yet because these were used to arrange the order of the activities. These were replaced later for the activities of 1 = walking ("Walk"), 2 = walking upstairs ("WalkUp"),3 = walking down stairs ("WalkDown"),4 = sitting ("Sit"), 5 = standing ("Stand"), and 6 = laying ("Lay") after the datasets were merged. The 3 letters "ing" were removed in the column names for a shorter column width. This code replacement with descriptive names could hae been done either way - earlier like now or later. I decided to do it later.
 
