@@ -1,10 +1,25 @@
 ---
-title: "README.md"
+title: "README2"
 author: "VIboy"
-date: "24 September 2015"
+date: "27 September 2015"
 output: html_document
 ---
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ## README.md
 
 This document explains how all of the scripts work and how they are connected.
@@ -21,10 +36,12 @@ Then I use the following script to download the file from the internet into a su
   dir.create("data")
 } 
 fileUrl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+
 ## Creates a subdirectory called "data" in your working directory
-download.file(fileUrl,destfile = "./data/project1.zip")
+> download.file(fileUrl,destfile = "./data/project1.zip")
 library(plyr)
 library(dplyr)
+
 Next download both the training and test data sets into files named "rawTrain" and "rawTest" resspectively, using the read.table() function and check their dimensions and structure to understand them better:
 
 > rawTrain<-read.table("./train/X_train.txt") #raw training set
