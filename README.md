@@ -124,11 +124,10 @@ dim(mergeData3) # 180 observations 68 columns
 mergeData3[1:5,1:5] # to check how the new data set look.
 
 The final tidy data set consists of 180 observations based on 30 Subjects who participated and the 6 Activities. There were 68 columns with the first two for the Subject and Activity, and 66 of the average value of mean and standard deviation of each of the measurement variables.
-In the final data set, noticed that there were si columns where "BodyBody" appeared and so these were replaced by just "Body" in line with the rest of the other variable names.
+In the final data set, notice that there were six columns where "BodyBody" appeared and so these were replaced by just "Body" in line with the rest of the other variable names.
 
 ## Select code from here depending on what to replace for column names
 > colnames(mergeData3)<-sub("()","ave_",colnames(mergeData3)) # Adds ave_ to the beginning  
 colnames(mergeData3)<-gsub("\\()","",colnames(mergeData3))
 colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
 write.table(mergeData3,tidyData.txt, sep=",",row.names=FALSE) #output new data set to tidyData
-# # The end - Need to change the Activity and column names accordingly # #
