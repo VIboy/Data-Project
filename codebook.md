@@ -1,8 +1,4 @@
----
-title: "CodeBook"
-author: "VIboy"
-date: "24 September 2015"
-output: word_document
+
 
 ## CodeBook
 
