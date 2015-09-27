@@ -21,9 +21,6 @@ features[1:10,1:2]
 features[552:561,1:2] # Check on the last 10 variables
 features$V2<-gsub("-","",features$V2) #Replace the "-" with no spacing
 
-# features$V2<-sub("()","ave_",features$V2) # Adds ave_ to the beginning    
-# Do this before replacing "()" in features
-
 #Modify column names in features before putting into the 2 data sets
 
 colnames(rawTrain)<-features$V2 #Put in the column names for training set
@@ -98,7 +95,7 @@ colnames(mergeData3)[1:2]<- c("Subject", "Activity") #Put back correct colnames 
 colnames(mergeData3)<-gsub("\\()","",colnames(mergeData3))
 colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
 mergeData3[1:5,63:68] # Look at  the column names
-write.table(mergeData3, "tidyData.txt", sep=",", row.names=FALSE) # Write out the tidy data set to a tidyData.txt file
+write.table(mergeData3, "tidyData.txt", sep="", row.names=FALSE) # Write out the tidy data set to a tidyData.txt file
 
 
 
