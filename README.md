@@ -99,7 +99,7 @@ testSet1<-cbind(subjectIdTest,testLabels,rawTest) #Complete test set with Subjec
 testSet1[1:5,1:6] # make sure column names for test set are correct
 dim(testSet1) #2947 observations  563 variables/columns
 
-The next few lines of script were run to merge the training and test sets as required to form one data set, before subsetting by selecting only the variables with mean and std of the column names.
+The next few lines of script were run to merge the training and test sets as required to form one data set, before subsetting by selecting only the variables with mean and standard deviation.
 
 > mergeData<-rbind(trainSet2,testSet1) # Merged data set of 10299 rows and 563 columns
 dim(mergeData) # 10299 81
@@ -134,7 +134,7 @@ mergeData2[1:10,1:10]
 
 The final step in this whole process is to group the data set according to Subject and Activity, and then compute the correspodning average value of the resultant grouping so that the new tidy data set has the average value of each variable for each activity and each subject. The code to do this is shown here:
 
-## Group by Subject & activity and caculate mean of each column
+## Group by Subject & activity and calculate the average(mean) of each grouped variable
 > library(dplyr) # To use %>% function
 mergeData3<-group_by(mergeData2, Subject, Activity) %>% summarise_each(c("mean"))
 dim(mergeData3) # 180 observations 68 columns
@@ -147,4 +147,4 @@ In the final data set, notice that there were six columns where "BodyBody" appea
 > colnames(mergeData3)<-sub("()","ave_",colnames(mergeData3)) # Adds ave_ to the beginning  
 colnames(mergeData3)<-gsub("\\()","",colnames(mergeData3))
 colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
-write.table(mergeData3,tidyData.txt, sep=",",row.names=FALSE) #output new data set to tidyData
+write.table(mergeData3,tidyData.txt, sep="",row.names=FALSE) #output new data set to tidyData
