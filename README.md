@@ -129,5 +129,5 @@ In the final data set, noticed that there were si columns where "BodyBody" appea
 ## Select code from here depending on what to replace for column names
 > colnames(mergeData3)<-sub("()","ave_",colnames(mergeData3)) # Adds ave_ to the beginning  
 colnames(mergeData3)<-gsub("\\()","",colnames(mergeData3))
-colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
+colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames that have 'BodyBody' with 'Body'
 write.table(mergeData3,tidyData.txt, sep=",",row.names=FALSE) #output new data set to tidyData
