@@ -29,8 +29,8 @@ library(dplyr)
 Next download both the training and test data sets into files named "rawTrain" and "rawTest" resspectively, using the read.table() function and check their dimensions and structure to understand them better:
 
 > rawTrain<-read.table("./train/X_train.txt") #raw training set
-dim(rawTrain) #7352  by 561
-str(rawTrain)
+> dim(rawTrain) #7352  by 561
+> str(rawTrain)
 rawTest<-read.table("./test/X_test.txt") #raw test set
 dim(rawTest) # 2947 561
 str(rawTest)
