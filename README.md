@@ -29,19 +29,19 @@ library(dplyr)
 Next download both the training and test data sets into files named "rawTrain" and "rawTest" resspectively, using the read.table() function and check their dimensions and structure to understand them better:
 
 > rawTrain<-read.table("./train/X_train.txt") #raw training set
-> dim(rawTrain) #7352  by 561
-> str(rawTrain)
-> rawTest<-read.table("./test/X_test.txt") #raw test set
-> dim(rawTest) # 2947 561
-> str(rawTest)
+dim(rawTrain) #7352  by 561
+str(rawTrain)
+rawTest<-read.table("./test/X_test.txt") #raw test set
+dim(rawTest) # 2947 561
+str(rawTest)
 
 As stated in the file "features_info.txt", the complete list of variables of each feature vector is available in 'features.txt'. So the following script was used to download the 'features.txt' file  which will be used as the column names for both the training and test sets:
 
 > features<-read.table("./features.txt")# Names of the feature vector which are the columns of the dataset
-> dim(features)
-> features[1:10,1:2]
-> features[552:561,1:2] # Examine the last 10 variables
-> features$V2<-gsub("-","",features$V2) #Replace the "-" with no spacing
+dim(features)
+features[1:10,1:2]
+features[552:561,1:2] # Examine the last 10 variables
+features$V2<-gsub("-","",features$V2) #Replace the "-" with no spacing
 
 The last line of above r code was used to remove the '-' and so reduce the width of the columns. Hopefully it also helps to enhance the descriptive names of the variables, eg. from 'tBodyAcc-mean()-X' to 'tBodymean()X'. 
 Then the following lines of r code were used to give more descriptive names to the column names obtained from the features.txt file:
@@ -52,6 +52,7 @@ colnames(rawTest)<-features$V2 #Put in column names for rawTest
 rawTest[1,1:10]
 
 The Subject id (ranging from 1-30) for the training set, were downloaded from the subject_train.txt file. This will be the row of observations showing which Subject was associated with which Activity and the relevant measurements in the variables. The Subject id for the test set was downloaded from the subject_test.txt file.
+
 
 > subjectidTrain<-read.table("./train/subject_train.txt") #Range 1:30. Subject id for training set.
 dim(subjectidTrain) # 7352 1
