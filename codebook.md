@@ -55,4 +55,4 @@ Therefore, the final tidy data set consists of the average of the mean and stand
 * fBodyGyroMag
 * fBodyGyroJerkMag
 
-
+In terms of the units for the variables, it has been noted earlier that the features have been normalised and bounded within the range of [-1,1].
