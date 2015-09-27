@@ -14,23 +14,23 @@ In terms of units, the acceleration signals from the smartphone accelerometer ar
 
 The set of variables that were estimated from the above signals are:
 
-.mean(): Mean value
-.std(): Standard deviation
-.mad(): Median absolute deviation 
-.max(): Largest value in array
-.min(): Smallest value in array
-.sma(): Signal magnitude area
-.energy(): Energy measure. Sum of the squares divided by the number of values. 
-.iqr(): Interquartile range 
-.entropy(): Signal entropy
-.arCoeff(): Autorregresion coefficients with Burg order equal to 4
-.correlation(): correlation coefficient between two signals
-.maxInds(): index of the frequency component with largest magnitude
-.*meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-.skewness(): skewness of the frequency domain signal 
-.kurtosis(): kurtosis of the frequency domain signal 
-.bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-.angle(): Angle between two vectors.
+* mean(): Mean value
+* std(): Standard deviation
+* mad(): Median absolute deviation 
+* max(): Largest value in array
+* min(): Smallest value in array
+* sma(): Signal magnitude area
+* energy(): Energy measure. Sum of the squares divided by the number of values. 
+* iqr(): Interquartile range 
+* entropy(): Signal entropy
+* arCoeff(): Autorregresion coefficients with Burg order equal to 4
+* correlation(): correlation coefficient between two signals
+* maxInds(): index of the frequency component with largest magnitude
+* meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+* skewness(): skewness of the frequency domain signal 
+* kurtosis(): kurtosis of the frequency domain signal 
+* bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+* angle(): Angle between two vectors.
 
 In this project, we are only interested in the mean and standard deviation variables. Please note that there is a meanFreq() component that will come up when we do a selection of the mean variable, and should be removed.
 
@@ -41,23 +41,23 @@ The next step was to merge the training and test sets into one data set. This cr
 We now have a clean and tidy set. In order to enhance the description of the Activty column, the descriptive names of the activities were put in to replace the related Activity code. Finally, the merged data set was transformed into a data set grouped by Subject and Activity, and the average of each of the measurement variables were computed. This resulted in an independent tidy data set with the average of each variable for each activity and each subject. The column names for the average of the variables were also modified to give more accurate and descriptive names to these newly derived variables. The column names were also cleaned up because there were 6 columns that had "BodyBody" as part of them. These were replaced by just "Body" for eg., from "ave_fBodyBodyAccJerkMagmean" to "ave_fBodyAccJerkMagmean". The "-" and "()" symbols were also removed. as these were seen to be redundant.
 Therefore, the final tidy data set consists of the average mean and standard deviation of the features derived from the following signals pattern:
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
 
 (from 'features_info.txt' of the Course Project file)
 
