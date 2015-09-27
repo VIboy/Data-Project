@@ -131,4 +131,3 @@ In the final data set, noticed that there were si columns where "BodyBody" appea
 colnames(mergeData3)<-gsub("\\()","",colnames(mergeData3))
 colnames(mergeData3)<-sub("BodyBody","Body",colnames(mergeData3)) # Replace colnames with BodyBody with Body
 write.table(mergeData3,tidyData.txt, sep=",",row.names=FALSE) #output new data set to tidyData
-# # The end - Need to change the Activity and column names accordingly # #
